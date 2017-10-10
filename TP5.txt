@@ -1,0 +1,36 @@
+TP 5 : Thread - 1 heure
+
+Exercice 1 :
+
+Ecrivez une classe qui demarre deux threads. 
+Le premier thread doit afficher dix fois "Bonjour !" en laissant passer une seconde
+entre chaque affichage. Le deuxieme thread doit afficher cinq fois "Salut !", en
+lassant passer deux secondes entre chaque affichage.
+Indication : La methode statique sleep de la classe Thread permet de mettre un
+thread en attente.
+
+Exercice 2 :
+
+On souhaite trouver toutes les occurrences d’un ´element dans un tableau donne. Pour cela, si le tableau est long, on peut le couper en deux et effectuer larecherche independamment dans les deux moities, en confiant la seconde partie
+a un nouveau thread travaillant en parallele. Ecrire un programme effectuant la 
+recherche de cette maniere ; le programme devra afficher un message pour chaque
+occurrence trouvee, puis afficher le nombre total d’occurences l’element dans le tableau.
+Pour cet exercice, vous pouvez utilisez la classe CompteurConcurrent que
+vous trouverez ci-dessous :
+
+class CompteurConcurrent 
+
+{ 
+	private int cpt = 0; 
+	public int getValue () { return cpt ; } 
+	public String toString () { return ””+cpt ; }
+
+		synchronized	public	void incremente () { 
+			cpt++;
+		}
+		synchronized public void incremente ( int i ) 
+		{ 
+		cpt = cpt+i ;
+		}
+		
+}
